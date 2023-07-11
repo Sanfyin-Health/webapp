@@ -16,4 +16,8 @@ export class MainNavComponent {
       map(result => result.matches),
       shareReplay()
     );
+
+    logout(){
+      localStorage.clear();
+    }
 }

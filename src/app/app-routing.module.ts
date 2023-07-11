@@ -5,6 +5,7 @@ import { DoctorComponent } from './modules/admin/components/doctor/doctor.compon
 import { PatientComponent } from './modules/admin/components/patient/patient.component';
 import { LoginComponent } from './useraccess/login/login.component';
 import { RegisterComponent } from './useraccess/register/register.component';
+import { authGuard } from './guards/auth.guard';
 
 const routes: Routes = [
   {path: 'login', component:LoginComponent},
@@ -12,6 +13,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/login', pathMatch: 'full'},
   {
     path: 'admin',
+    canActivate: [authGuard],
     loadChildren: () =>
       import('./modules/admin/admin.module').then((m) => m.AdminModule),
   },  

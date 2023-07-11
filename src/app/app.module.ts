@@ -17,6 +17,10 @@ import { AppointmentComponent } from './modules/admin/components/appointment/app
 import { LoginComponent } from './useraccess/login/login.component';
 import { RegisterComponent } from './useraccess/register/register.component';
 
+import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +39,10 @@ import { RegisterComponent } from './useraccess/register/register.component';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    ReactiveFormsModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
