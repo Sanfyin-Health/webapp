@@ -6,9 +6,9 @@
   width: 200px;
 }
 
-.sidenav .mat-toolbar {
+/* .sidenav .mat-toolbar {
   background: inherit;
-}
+} */
 
 .mat-toolbar.mat-primary {
   position: sticky;
@@ -30,5 +30,5 @@
 
 .active-link
 {
-  color: bisque;
+  color: rgb(16, 226, 82);
 }

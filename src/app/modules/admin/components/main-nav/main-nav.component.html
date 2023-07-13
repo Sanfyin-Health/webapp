@@ -2,7 +2,7 @@
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'">
-    <mat-toolbar>Menu</mat-toolbar>
+    <mat-toolbar color="primary">Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="" routerLink="appointment" (click)="drawer.toggle()">Take Appointment</a>
       <a mat-list-item href="#" routerLink="patient" (click)="drawer.toggle()">Add Patient</a>
@@ -20,7 +20,8 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>Healtho</span>
+      <span><img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
+        style="width: 85px;text-shadow: 2px 2px;" alt="logo"> Healtho</span>
       <span class="spacer"></span>
       <div [class.hidden]="isHandset$ | async">
         <a mat-button href="" routerLink="appointment" routerLinkActive="active-link">Take Appointment</a>

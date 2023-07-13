@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
     Password : new FormControl(''),
   });
 
+  clicked = false;
+
   constructor(private auth:AuthService, private router:Router)
   {
 
@@ -29,6 +31,8 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
 
+
+    this.clicked = true;
     this.auth.onLogin(this.loginForm.value).subscribe((res:any) => {
       console.log(res);
       localStorage.setItem('token',res.token);
@@ -37,7 +41,7 @@ export class LoginComponent implements OnInit {
     error => {
       console.log(error);
       this.router.navigate(["login"]);
-
+      this.clicked =false;
     });
 
     this.loginForm.get("Username")?.reset();
