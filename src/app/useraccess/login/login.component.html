@@ -3,6 +3,10 @@
     <mat-toolbar color="primary"> <span><img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/lotus.webp"
       style="width: 85px;text-shadow: 2px 2px;" alt="logo"> Please login to enter into the site</span></mat-toolbar>
     <form [formGroup]="loginForm"  fxLayoutAlign="stretch" fxLayout="column" class="login-form">
+
+      <mat-spinner fxLayoutAlign="center center" fxFlexFill *ngIf="clicked">
+      </mat-spinner>
+
       <mat-form-field>
         <mat-label>Username</mat-label>
         <input matInput placeholder="Phone Number" [disabled]="clicked"  formControlName="Username">
@@ -16,8 +20,7 @@
       <button mat-button type="button" [disabled]="clicked"  (click)="onSubmit()">Login</button>
     </form>
 
-    <mat-spinner *ngIf="clicked">
-    </mat-spinner>
+    
 
   </mat-card>
 </div>
