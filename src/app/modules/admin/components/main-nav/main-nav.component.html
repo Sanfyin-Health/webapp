@@ -1,13 +1,12 @@
 <mat-sidenav-container class="sidenav-container">
   <mat-sidenav #drawer class="sidenav" fixedInViewport
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="(isHandset$ | async) === false">
+      [mode]="(isHandset$ | async) ? 'over' : 'side'">
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="" routerLink="appointment">Take Appointment</a>
-      <a mat-list-item href="#" routerLink="patient">Add Patient</a>
-      <a mat-list-item href="#" routerLink="doctor">Add Doctor</a>
+      <a mat-list-item href="" routerLink="appointment" (click)="drawer.toggle()">Take Appointment</a>
+      <a mat-list-item href="#" routerLink="patient" (click)="drawer.toggle()">Add Patient</a>
+      <a mat-list-item href="#" routerLink="doctor" (click)="drawer.toggle()">Add Doctor</a>
       <a mat-list-item href="#" (click)="logout()">Logout</a>
     </mat-nav-list>
   </mat-sidenav>
@@ -22,6 +21,14 @@
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
       <span>Healtho</span>
+      <span class="spacer"></span>
+      <div [class.hidden]="isHandset$ | async">
+        <a mat-button href="" routerLink="appointment" routerLinkActive="active-link">Take Appointment</a>
+        <a mat-button href="#" routerLink="patient"  routerLinkActive="active-link">Add Patient</a>
+        <a mat-button href="#" routerLink="doctor"  routerLinkActive="active-link">Add Doctor</a>
+        <a mat-button href="#" (click)="logout()">Logout</a>
+      </div>
+
     </mat-toolbar>
     <!-- Add Content Here -->
     <router-outlet></router-outlet>
